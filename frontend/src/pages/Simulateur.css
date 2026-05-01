@@ -1,0 +1,223 @@
+/* src/pages/Simulateur.css */
+
+.sim-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .sim-layout { grid-template-columns: 1fr; }
+}
+
+/* ─── Gauche ─── */
+.sim-left { display: flex; flex-direction: column; gap: 16px; }
+
+.sim-eq-card { padding: 16px; }
+
+.sim-hint {
+  font-size: 0.78rem;
+  color: var(--accent-orange);
+  margin-top: 8px;
+}
+
+/* Scénarios */
+.sim-scenarios { display: flex; flex-direction: column; gap: 8px; }
+
+.scenario-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  font-family: var(--font-main);
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+.scenario-card:hover:not(:disabled) {
+  border-left-color: var(--scenario-couleur);
+  background: var(--bg-hover);
+}
+
+.scenario-card.actif {
+  border-left-color: var(--scenario-couleur);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 0 0 1px var(--scenario-couleur);
+}
+
+.scenario-card.desactive {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scenario-icone {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.scenario-info { flex: 1; }
+
+.scenario-nom {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.scenario-desc {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.scenario-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.scenario-duree {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ─── Droite ─── */
+.sim-right { display: flex; flex-direction: column; gap: 16px; }
+
+/* Température actuelle */
+.sim-temp-card { padding: 20px; }
+
+.sim-temp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.sim-temp-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.sim-temp-valeur {
+  font-size: 3.5rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+/* Barre de progression */
+.sim-progress-container { margin-top: 8px; }
+
+.sim-progress-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.78rem;
+}
+
+.sim-progress-label { color: var(--text-secondary); }
+.sim-progress-pct   { color: var(--text-muted); font-family: var(--font-mono); }
+
+.sim-progress-bar {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.sim-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* Stats */
+.sim-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sim-stat {
+  padding: 16px;
+  text-align: center;
+}
+
+.sim-stat-val {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.sim-stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Logs */
+.sim-logs-card { padding: 16px; }
+
+.sim-logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.sim-logs {
+  height: 320px;
+  overflow-y: auto;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.sim-logs-empty {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px;
+}
+
+.sim-log {
+  display: flex;
+  gap: 10px;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border-light);
+  line-height: 1.5;
+}
+
+.sim-log:last-child { border-bottom: none; }
+
+.sim-log-heure {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  font-size: 0.72rem;
+}
+
+.sim-log-msg { color: var(--text-secondary); }
+
+.sim-log-success .sim-log-msg { color: var(--accent-green); }
+.sim-log-warning .sim-log-msg { color: var(--accent-orange); }
+.sim-log-error   .sim-log-msg { color: var(--accent-red); }
+.sim-log-info    .sim-log-msg { color: var(--text-secondary); }

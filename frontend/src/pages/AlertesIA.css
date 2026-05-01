@@ -1,0 +1,112 @@
+/* src/pages/AlertesIA.css */
+
+.ia-stat {
+  padding: 20px;
+  text-align: center;
+  border-top: 3px solid;
+}
+
+.ia-stat-critique { border-top-color: var(--accent-red); }
+.ia-stat-warning  { border-top-color: var(--accent-orange); }
+.ia-stat-pending  { border-top-color: var(--accent-purple); }
+
+.ia-stat-val {
+  font-size: 2.4rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.ia-stat-critique .ia-stat-val { color: var(--accent-red); }
+.ia-stat-warning  .ia-stat-val { color: var(--accent-orange); }
+.ia-stat-pending  .ia-stat-val { color: var(--accent-purple); }
+
+.ia-stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Liste alertes */
+.alertes-ia-liste {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alerte-ia-card {
+  padding: 18px;
+  border-left: 4px solid;
+  transition: opacity 0.3s;
+}
+
+.alerte-ia-critique { border-left-color: var(--accent-red); }
+.alerte-ia-warning  { border-left-color: var(--accent-orange); }
+.alerte-ia-info     { border-left-color: var(--accent-blue); }
+.alerte-ia-card.traitee { opacity: 0.6; }
+
+.alerte-ia-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+
+.alerte-ia-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.alerte-ia-message {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.alerte-ia-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+}
+
+.alerte-ia-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-val {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Barre de probabilité */
+.proba-bar {
+  height: 6px;
+  width: 80px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.proba-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}

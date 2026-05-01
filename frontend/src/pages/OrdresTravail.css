@@ -1,0 +1,39 @@
+/* src/pages/OrdresTravail.css */
+
+.ot-compteurs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.ot-compteur {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-main);
+}
+
+.ot-compteur:hover,
+.ot-compteur.active {
+  border-color: var(--accent-blue);
+  background: rgba(47,129,247,0.08);
+}
+
+.ot-compteur-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+.ot-priorite {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}

@@ -1,0 +1,16 @@
+/* src/components/Layout.css */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout-main {
+  flex: 1;
+  margin-left: 220px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .layout-main { margin-left: 0; }
+}

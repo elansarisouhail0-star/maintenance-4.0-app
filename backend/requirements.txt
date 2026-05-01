@@ -1,0 +1,18 @@
+# =============================================================================
+# requirements.txt — Dépendances Python du backend FastAPI
+# Installation : pip install -r requirements.txt
+# =============================================================================
+
+fastapi==0.115.0          # Framework API REST
+uvicorn==0.30.0           # Serveur ASGI pour lancer FastAPI
+sqlalchemy==2.0.36        # ORM pour interagir avec PostgreSQL
+psycopg2-binary==2.9.10   # Driver PostgreSQL pour Python 3.13
+pydantic[email]==2.9.2    # Validation des données + support EmailStr
+python-jose[cryptography]==3.3.0  # Génération et vérification des tokens JWT
+passlib[bcrypt]==1.7.4    # Hashage sécurisé des mots de passe
+python-multipart==0.0.12  # Support des formulaires multipart
+python-dotenv==1.0.1      # Chargement des variables d'environnement (.env)
+scikit-learn==1.6.0       # Modèles IA pour la maintenance prédictive
+numpy==2.1.3              # Calculs numériques (requis par scikit-learn)
+pandas==2.2.3             # Manipulation des données capteurs
+bcrypt==4.2.0             # Requis explicitement pour Python 3.13

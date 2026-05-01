@@ -1,0 +1,12 @@
+/* src/pages/Stock.css */
+
+.stock-alerte-row td { background: rgba(248,81,73,0.04) !important; }
+
+.stock-qte {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.stock-ok  { color: var(--accent-green); }
+.stock-bas { color: var(--accent-orange); }
