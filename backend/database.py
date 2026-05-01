@@ -15,7 +15,7 @@ import os
 # -----------------------------------------------------------------------------
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:VOTRE_MOT_DE_PASSE@db.VOTRE_ID.supabase.co:5432/postgres"
+    "DATABASE_URL = "sqlite:///./gmao.db""
 )
 
 # -----------------------------------------------------------------------------
@@ -24,7 +24,7 @@ DATABASE_URL = os.getenv(
 # -----------------------------------------------------------------------------
 engine = create_engine(
     DATABASE_URL,
-    pool_pre_ping=True
+    connect_args={"check_same_thread": False}
 )
 
 # -----------------------------------------------------------------------------
