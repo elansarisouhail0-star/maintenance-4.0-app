@@ -18,7 +18,7 @@ const MENU = [
 ];
 
 export default function Sidebar() {
-  const { utilisateur, deconnexion } = useAuth();
+  const { deconnexion } = useAuth();
   const navigate = useNavigate();
 
   const handleDeconnexion = () => {
@@ -65,13 +65,15 @@ export default function Sidebar() {
       <div className="sidebar-footer">
         <div className="sidebar-user">
           <div className="sidebar-avatar">
-            {utilisateur?.prenom?.[0]}{utilisateur?.nom?.[0]}
+            RM
           </div>
           <div className="sidebar-user-info">
             <span className="sidebar-user-name">
-              {utilisateur?.prenom} {utilisateur?.nom}
+              Radouane MAJDOUL
             </span>
-            <span className="sidebar-user-role">{utilisateur?.role}</span>
+            <span className="sidebar-user-role">
+              Admin
+            </span>
           </div>
         </div>
         <button className="sidebar-logout" onClick={handleDeconnexion} title="Déconnexion">
